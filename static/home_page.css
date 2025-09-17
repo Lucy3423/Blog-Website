@@ -1,0 +1,62 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    margin: 30px;
+}
+
+#bio {
+    width: 60%;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+}
+
+#add-blog-link {
+    width: 30%;
+    /* padding: 30px; */
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border: 3px solid black;
+    border-radius: 3px; 
+    background-color: white;
+    
+} 
+
+#add-blog-link:hover {
+    background-color: #ba3349; 
+    color: white; 
+}
+
+#add-blog-link a:hover {
+    color: white
+}
+ 
+a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+/* a:hover {
+    background-color: #ba3349;
+    /* color: white; }*/
+
+
+/* #link-box {
+    border: 3px black solid;
+    border-radius: 3px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+} */
+
+#link-box:hover {
+    background-color: #ba3349;
+    color: white;
+}
+

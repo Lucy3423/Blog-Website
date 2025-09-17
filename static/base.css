@@ -1,0 +1,35 @@
+body {
+    background-color: #ead1bd; 
+    border: 4px solid rgb(148, 89, 50); 
+    border-radius: 20px;
+    height: 100vh;
+    margin: 40px; 
+    font-family: Garamond;  
+    /* display: flex;
+    /* align-items: center;
+    justify-content: start; */
+    /* flex-direction: column; */ 
+}  
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#title {
+    font-size: 45px;
+    color: #ba3349;
+    text-decoration: underline wavy;
+} 
+
+
+
+
+
+
+
+/* #bd215a */
+
+  
