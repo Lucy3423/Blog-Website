@@ -1,0 +1,46 @@
+.main-content {
+    display: flex;
+    margin: 20px;
+    gap: 50px;
+}
+
+.description {
+    width: 50%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 170px;
+    /* font-size: 2; */
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px rgb(179, 44, 86) solid;
+    background-color: #ba3349;
+    border-radius: 3px;
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    height: 600px;
+    color: white;
+    line-height: 50px;
+}
+
+.form-title {
+    font-size: 30px;
+}
+
+.form-input {
+    width: 250px;
+}
+
+
+
+
+#filler-content {
+    width: 33.33%;
+}

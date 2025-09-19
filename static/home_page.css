@@ -27,18 +27,19 @@
 
 #add-blog-link:hover {
     background-color: #ba3349; 
-    color: white; 
+    color: white;  
 }
 
 #add-blog-link a:hover {
-    color: white
+    color: white;
 }
  
 a {
     text-decoration: none;
-    color: black;
-    
+    color: black;    
 }
+
+
 
 /* a:hover {
     background-color: #ba3349;

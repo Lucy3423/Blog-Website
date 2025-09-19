@@ -1,7 +1,7 @@
 class User:
-    def __init__(self, name, birthday, fav_singer, fav_colour, topics, blogs):
+    def __init__(self, name, birthday, fav_singer, image_fav_singer, fun_fact):
         self.name = name
         self.birthday = birthday
         self.fav_singer = fav_singer 
-        self.fav_colour = fav_colour
-        self.blogs: list = blogs 
+        self.image_fav_singer = image_fav_singer 
+        self.fun_fact = fun_fact

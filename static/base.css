@@ -1,8 +1,8 @@
 body {
-    background-color: #ead1bd; 
-    border: 4px solid rgb(148, 89, 50); 
+    background-color: #f2ddcc; 
+    border: 4px solid rgb(179, 44, 86); 
     border-radius: 20px;
-    height: 100vh;
+    height: 800px;
     margin: 40px; 
     font-family: Garamond;  
     /* display: flex;
@@ -18,13 +18,43 @@ body {
 }
 
 
-#title {
+#title h1 {
     font-size: 45px;
     color: #ba3349;
     text-decoration: underline wavy;
 } 
 
+#title {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#navigation {
+    width: 33.33%;
+    margin: 20px;
+    /* padding: 20px; */
+}
+
+#navigation-border {
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #ba3349;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;    
+}
+
+a:hover {
+    color: white;
+}
 
 
 

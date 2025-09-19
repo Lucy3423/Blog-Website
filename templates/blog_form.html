@@ -2,12 +2,52 @@
 
 <head>
     {% block title%} Blog Form {% endblock %}
+    {% block head%}
+        <link rel="stylesheet" href="{{url_for('static', filename='blog_form.css')}}">
+    {% endblock %}
 </head>
 
 <body>
     {% block content %}
-        <div class="header">
-            <h1 id="title"> Blog Form </h1>
+    <div class="header">
+        <div id="navigation">
+            <div id="navigation-border">
+                <a href="{{url_for('home')}}"><h2> ← Back </h2></a>
+            </div>
+        </div>
+        <div id="title">
+            <h1> Blog Form </h1>
+        </div>
+        <div id="filler-content">
+
+        </div>
+    </div>
+
+
+        <div class="main-content">
+            <div class="description">
+                <h2> Fill out this form to start creating the content for you blog!
+                    Each blog features three different topics which interest you - this can be food, programming, gaming, sport and much more. 
+                    Simply list the topics you want to talk about below in order to create a section for them. 
+                </h2>
+            </div>
+            <div class="form">
+                <form action="/dashboard" methods="POST">
+                    {{form.hidden_tag()}}
+                    {{form.owner_name.label}} {{form.owner_name (class="form-input")}}<br>
+                    {{form.blog_name.label}} {{form.blog_name}} <br>
+                    {{form.birthday.label}} {{form.birthday}}<br>
+                    {{form.blog_cover.label}} {{form.blog_cover}} <br>
+                    {{form.fav_singer.label}} {{form.fav_singer}} <br>
+                    {{form.image_fav_singer.label}} {{form.image_fav_singer}}<br>
+                    {{form.fun_fact.label}} {{form.fun_fact}}<br>
+
+                    {{form.topic1.label}} {{form.topic1}} <br>
+                    {{form.topic2.label}} {{form.topic2}} <br>
+                    {{form.topic2.label}} {{form.topic3}} <br>
+                    {{form.submit()}}
+                </form>
+            </div>
         </div>
 
 
