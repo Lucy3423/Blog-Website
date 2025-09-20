@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px rgb(179, 44, 86) solid;
+    /* border: 3px rgb(179, 44, 86) solid; */
     background-color: #ba3349;
     border-radius: 3px;
     flex-direction: column;

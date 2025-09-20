@@ -9,7 +9,10 @@
     width: 60%;
     line-height: 2;
     display: flex;
+    justify-content: center;
     align-items: center;
+    border: 3px solid rgb(179, 44, 86);
+    padding: 10px;
 }
 
 #add-blog-link {
@@ -28,6 +31,7 @@
 #add-blog-link:hover {
     background-color: #ba3349; 
     color: white;  
+    border: 3px whitesmoke solid;
 }
 
 #add-blog-link a:hover {

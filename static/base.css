@@ -1,8 +1,12 @@
 body {
     background-color: #f2ddcc; 
+    background-image: url("https://i.pinimg.com/1200x/9b/b1/de/9bb1de8abb995f40fad86fe8127d534b.jpg");
+    background-position: center;
+    /* background-size: cover; */
+    background-repeat: repeat;
     border: 4px solid rgb(179, 44, 86); 
     border-radius: 20px;
-    height: 800px;
+    height: 850px;
     margin: 40px; 
     font-family: Garamond;  
     /* display: flex;
@@ -18,17 +22,18 @@ body {
 }
 
 
-#title h1 {
-    font-size: 45px;
-    color: #ba3349;
-    text-decoration: underline wavy;
-} 
 
 #title {
     width: 33.33%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #ba3349;
+    text-decoration: underline wavy;
+}
+
+#title-text {
+    font-size: 45px;
 }
 
 #navigation {
@@ -38,7 +43,7 @@ body {
 }
 
 #navigation-border {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 25px;
     background-color: #ba3349;
     width: 25%;

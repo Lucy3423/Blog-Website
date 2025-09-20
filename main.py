@@ -20,13 +20,19 @@ def home():
 @app.route('/blog_form', methods=["GET", "POST"])
 def blog_form():
     form = Build_blog_form()
-    new_user = User(form.owner_name.data, form.birthday.data, form.fav_singer.data, form.image_fav_singer.data, form.fun_fact.data)
-    new_topics = [form.topic1.data, form.topic2.data, form.topic3.data]
-    blog_manager.blogs.append(Blog(new_user, form.blog_name.data, form.blog_cover.data, new_topics))
 
-    if request.method == "post":
+    if form.validate_on_submit():
+        new_user = User(form.owner_name.data, form.birthday.data, form.fav_singer.data, form.image_fav_singer.data, form.fun_fact.data)
+        new_topics = [form.topic1.data, form.topic2.data, form.topic3.data]
+        blog_manager.blogs.append(Blog(new_user, form.blog_name.data, form.blog_cover.data, new_topics))
+
+        # check if the format of the image links is correct
+        # if correct redirect the user to blog_dashboard.html
+        # if NOT, then flash an error message. 
+
         redirect(url_for("blog_dashboard.html"))
     return render_template("blog_form.html", form=form)
+
 
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
