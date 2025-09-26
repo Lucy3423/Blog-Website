@@ -5,7 +5,7 @@
 }
 
 .description {
-    width: 50%;
+    width: 55%;
     display: flex;
     /* justify-content: center;
     align-items: center; */
@@ -14,10 +14,10 @@
 }
 
 .form {
-    width: 50%;
+    width: 45%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     /* border: 3px rgb(179, 44, 86) solid; */
     background-color: #ba3349;
     border-radius: 3px;
@@ -25,17 +25,38 @@
     font-size: 25px;
     font-weight: bold;
     padding: 20px;
-    height: 600px;
+    /* height: 650px; */
     color: white;
     line-height: 50px;
 }
+
+.form-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* this class will make the fields input box and label aligned on the same line */
+.form-row input, .form-row label {
+    vertical-align: middle;
+    display: inline;
+}
+
 
 .form-title {
     font-size: 30px;
 }
 
-.form-input {
+.form-input-short {
     width: 250px;
+    border: 1px solid #ba3349;
+}
+
+.form-input-long {
+    width: 400px;
+    border: 1px solid #ba3349;
 }
 
 
@@ -44,3 +65,31 @@
 #filler-content {
     width: 33.33%;
 }
+
+.error-message {
+    background-color: white;
+    color: #ba3349;
+    padding-left: 25px;
+    padding-right: 10px;
+    font-weight: bold;
+    width: 300px;
+    /* padding-top: -20px; */
+}
+
+.submit-button {
+    font-family: Garamond;  
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #ba3349;
+    color: white;
+    border: 2px dashed white;
+    margin-top: 10px;
+}
+
+.submit-button:HOVER {
+    background-color: white;
+    color:#ba3349;
+    border: 2px dashed #ba3349;
+}
+
+

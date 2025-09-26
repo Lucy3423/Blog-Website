@@ -19,7 +19,6 @@
             <h1 id="title-text"> Blog Form </h1>
         </div>
         <div id="filler-content">
-
         </div>
     </div>
 
@@ -32,21 +31,58 @@
                 </h2>
             </div>
             <div class="form">
-                <form action="/dashboard" methods="POST">
+                <form action="/blog_form" method="POST" class="form-content">
                     {{form.hidden_tag()}}
-                    {{form.owner_name.label}} {{form.owner_name (class="form-input")}}<br>
-                    {{form.blog_name.label}} {{form.blog_name}} <br>
-                    {{form.birthday.label}} {{form.birthday}}<br>
-                    {{form.blog_cover.label}} {{form.blog_cover}} <br>
-                    {{form.fav_singer.label}} {{form.fav_singer}} <br>
-                    {{form.image_fav_singer.label}} {{form.image_fav_singer}}<br>
-                    {{form.fun_fact.label}} {{form.fun_fact}}<br>
+                    <div class="form-row">
+                    {{form.owner_name.label}} {{form.owner_name(class="form-input-short")}}<br>
+                    </div>
 
+                    <div class="form-row">
+                    {{form.blog_name.label}} {{form.blog_name(class="form-input-short")}} <br>
+                    </div>
+
+                    <div class="form-row">
+                    {{form.birthday.label}} {{form.birthday(class="form-input-short")}}<br>
+                    </div>
+
+                    <div class="form-row">
+                    {{form.blog_cover.label}} {{form.blog_cover(class="form-input-long")}} <br>
+                    </div>
+
+                    <div class="form-row">
+                    {{form.fav_singer.label}} {{form.fav_singer(clas="form-input-short")}} <br>
+                    </div>
+
+                    <div class="form-row">
+                    {{form.image_fav_singer.label}} {{form.image_fav_singer(class="form-input-long")}}<br>
+                    </div>
+
+                    <div class="form-row">
+                    {{form.fun_fact.label}} {{form.fun_fact(class="form-input-short")}}<br>
+                    </div>
+
+                    <div class="form-row">
                     {{form.topic1.label}} {{form.topic1}} <br>
+                    </div>
+
+                    <div class="form-row">
                     {{form.topic2.label}} {{form.topic2}} <br>
+                    </div>
+
+                    <div class="form-row">
                     {{form.topic2.label}} {{form.topic3}} <br>
-                    {{form.submit()}}
+                    </div>
+
+                    {{form.submit(class="submit-button")}}
                 </form>
+                <div class="error-message">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <h3 class="error-text">{{messages[0]}}</h3>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+   
             </div>
         </div>
 

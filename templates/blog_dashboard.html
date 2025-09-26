@@ -8,7 +8,17 @@
 
 
 {% block content %}
-
-<h1 id="title"> Lucy Beany's dashboard</h1>
+<div class="header">
+    <div id="navigation">
+        <div id="navigation-border">
+            <a href="{{url_for('home')}}"><h2> ← Back </h2></a>
+    </div>
+    <div id="title">
+        <h1 id="title-text"> {{blog_manager.blogs[blog_id].blog_name}} </h1>
+    </div>
+    <div id="filler-content">
+    </div>
+</div>
+<h1 id="title"> Lucy Beany's dashboard </h1>
 
 {% endblock%}

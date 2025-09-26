@@ -15,4 +15,4 @@ class Build_blog_form(FlaskForm):
     topic2 = StringField("Topic 2 is about... ", validators=[DataRequired()])
     topic3 = StringField("Topic 3 is about... ", validators=[DataRequired()])
 
-    submit = SubmitField("Submit")
+    submit = SubmitField("SUBMIT")

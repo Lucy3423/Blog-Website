@@ -1,13 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, request, flash 
 
-from user import User
-from blog import Blog
 from blog_manager import Blog_manager
+from blog import Blog
+from topic import Topic
+from user import User
 
 from forms.build_blog_form import Build_blog_form
 
 blog_manager = Blog_manager([])
-
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "mysecret" 
@@ -22,21 +22,25 @@ def blog_form():
     form = Build_blog_form()
 
     if form.validate_on_submit():
-        new_user = User(form.owner_name.data, form.birthday.data, form.fav_singer.data, form.image_fav_singer.data, form.fun_fact.data)
-        new_topics = [form.topic1.data, form.topic2.data, form.topic3.data]
-        blog_manager.blogs.append(Blog(new_user, form.blog_name.data, form.blog_cover.data, new_topics))
-
+        new_blog_id = blog_manager.creat_new_blog(form)
         # check if the format of the image links is correct
         # if correct redirect the user to blog_dashboard.html
         # if NOT, then flash an error message. 
-
-        redirect(url_for("blog_dashboard.html"))
+        valid = blog_manager.check_image_format(form)
+        print(valid)
+        if valid == True:    
+            return redirect(url_for("dashboard", blog_id=new_blog_id))
+        # pass through the blog_id in route
+        else: 
+            flash("Incorret image format")
+            return render_template("blog_form.html", form=form)
     return render_template("blog_form.html", form=form)
 
 
-@app.route("/dashboard", methods=["GET", "POST"])
-def dashboard():
-    return render_template("blog_dashboard.html")
+
+@app.route("/dashboard/<int:blog_id>", methods=["GET", "POST"])
+def dashboard(blog_id):
+    return render_template("blog_dashboard.html", blog_id=blog_id, blog_manager=blog_manager)
 
 if __name__ == "__main__":
     app.run(debug=True)

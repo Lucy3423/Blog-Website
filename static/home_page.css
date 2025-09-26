@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(179, 44, 86);
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -23,7 +24,7 @@
     justify-content: center;
     align-items: center; 
     border: 3px solid black;
-    border-radius: 3px; 
+    border-radius: 5px; 
     background-color: white;
     
 } 
@@ -32,6 +33,7 @@
     background-color: #ba3349; 
     color: white;  
     border: 3px whitesmoke solid;
+    border-radius: 5px;
 }
 
 #add-blog-link a:hover {
