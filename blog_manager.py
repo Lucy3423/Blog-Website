@@ -10,9 +10,9 @@ class Blog_manager:
         self.current_id = 0
     
     def creat_new_blog(self, form:Build_blog_form):
-        new_user = User(form.owner_name.data, form.birthday.data, form.fav_singer.data, form.image_fav_singer.data, form.fun_fact.data)
+        new_user = User(form.owner_name.data, form.fav_singer.data, form.image_fav_singer.data, form.fun_fact.data)
         new_topics = [form.topic1.data, form.topic2.data, form.topic3.data]
-        self.blogs.append(Blog(self.current_id, new_user, form.blog_name.data, form.blog_cover.data, new_topics))
+        self.blogs.append(Blog(self.current_id, new_user, form.description.data, form.blog_name.data, form.blog_cover.data, new_topics))
         current_id = self.current_id
         self.current_id += 1
         return current_id

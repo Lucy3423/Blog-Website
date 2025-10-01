@@ -29,7 +29,7 @@
     
 } 
 
-#add-blog-link:hover {
+#add-blog-link a:hover {
     background-color: #ba3349; 
     color: white;  
     border: 3px whitesmoke solid;

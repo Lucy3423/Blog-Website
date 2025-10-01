@@ -52,13 +52,25 @@ body {
     justify-content: center;
 }
 
+#filler-content {
+    width: 33.33%;
+}
+
 a {
     text-decoration: none;
-    color: black;    
+    color: white;    
 }
 
 a:hover {
-    color: white;
+    color: #ba3349;
+    background-color: white;
+}
+
+#navigation-border:hover {
+    color: #ba3349;
+    background-color: white;
+    border: 2px solid #ba3349;
+ 
 }
 
 

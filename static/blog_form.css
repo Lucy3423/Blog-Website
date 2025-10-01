@@ -59,12 +59,11 @@
     border: 1px solid #ba3349;
 }
 
-
-
-
-#filler-content {
-    width: 33.33%;
+.form-input-description {
+    width: 500px;
+    height: 50px;
 }
+
 
 .error-message {
     background-color: white;

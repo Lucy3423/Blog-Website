@@ -2,16 +2,25 @@
 
 {% block title %} Dashboard {% endblock %}
 
-{% block head %} 
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='blog_dashboard.css')}}">
 
 {% endblock %}
 
 
 {% block content %}
+<div class="background-image">
+    <img src="{{blog_manager.blogs[blog_id].blog_cover}}">
+</div>
+
 <div class="header">
+
     <div id="navigation">
         <div id="navigation-border">
-            <a href="{{url_for('home')}}"><h2> ← Back </h2></a>
+            <a href="{{url_for('home')}}">
+                <h2> ← Back </h2>
+            </a>
+        </div>
     </div>
     <div id="title">
         <h1 id="title-text"> {{blog_manager.blogs[blog_id].blog_name}} </h1>
@@ -19,6 +28,73 @@
     <div id="filler-content">
     </div>
 </div>
-<h1 id="title"> Lucy Beany's dashboard </h1>
+
+
+<div class="bio-section-container">
+    <div class="about-me-content">
+        <h2 id="about-me-title"> All About Me! </h2>
+        <h2 id="description"> {{blog_manager.blogs[blog_id].description}}</h2>
+
+    </div>
+</div>
+
+<div class="topics-container">
+    <div class="topic">
+        <h1> {{blog_manager.blogs[blog_id].topics[0]}} </h1>
+    </div>
+    <div class="topic">
+        <h1> {{blog_manager.blogs[blog_id].topics[1]}} </h1>
+    </div>
+    <div class="topic">
+        <h1> {{blog_manager.blogs[blog_id].topics[2]}} </h1>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="section1">
+                <h2> jiewofjeiwojfio </h2>
+
+            </div>
+            <div class="section2"></div>
+            <h1> Blog </h1> -->
+    <!-- </div> -->
+
+    <!-- <div class="fav-singer-content">
+        <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}" class="fav-singer-image"> -->
+
+
+
+<!-- <div class="singer-section">
+        <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}" class="fav-singer-image">
+    </div> -->
+
+<!-- <div class="main-content">
+        <div class="about-me">
+            <div id="about-me-title"><h2> All About Me </h2></div>
+            <div id="about-me-content"><h2> Content</h2></div>
+        </div>
+        <div class="singer-section">
+            <div id="fav-singer-title"><h2> My favourite singer/band is {{blog_manager.blogs[blog_id].owner.fav_singer}}</h2></div>
+            <div id="fav-singer-image">
+                <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}">
+            </div>
+        </div>
+    </div> -->
+
+
 
 {% endblock%}

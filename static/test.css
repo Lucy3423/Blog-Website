@@ -1,0 +1,10 @@
+.my-table {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-table td, th {
+    border: 2px solid black;
+}

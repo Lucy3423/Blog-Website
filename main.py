@@ -17,15 +17,18 @@ def home():
     return render_template("home_page.html") 
  
 
+@app.route('/test')
+def test():
+    return render_template("test.html")
+
+
+
 @app.route('/blog_form', methods=["GET", "POST"])
 def blog_form():
     form = Build_blog_form()
+    new_blog_id = blog_manager.creat_new_blog(form)
 
     if form.validate_on_submit():
-        new_blog_id = blog_manager.creat_new_blog(form)
-        # check if the format of the image links is correct
-        # if correct redirect the user to blog_dashboard.html
-        # if NOT, then flash an error message. 
         valid = blog_manager.check_image_format(form)
         print(valid)
         if valid == True:    
