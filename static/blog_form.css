@@ -52,16 +52,20 @@
 .form-input-short {
     width: 250px;
     border: 1px solid #ba3349;
+    display: flex;
 }
 
 .form-input-long {
     width: 400px;
     border: 1px solid #ba3349;
+    display: flex;
 }
+
 
 .form-input-description {
     width: 500px;
     height: 50px;
+    display: flex;
 }
 
 

@@ -34,9 +34,45 @@
     <div class="about-me-content">
         <h2 id="about-me-title"> All About Me! </h2>
         <h2 id="description"> {{blog_manager.blogs[blog_id].description}}</h2>
+    </div>
+    <div class="birthday-section">
+        <h2> I am a(n) {{sign}}</h2>
 
+        <!-- insert correct star sign image -->
+        <!-- NOTE: using the image path WON'T work, because Flask needs you to you url_for. Also, the images must be stored in the static folder otherwise, Flask can't render them.  -->
+        {% if sign == "Aquarius" %}
+            <img src="{{url_for('static', filename='images/Aquarius.jpg')}}">
+        {% elif sign == "Aries" %}
+            <img src="{{url_for('static', filename='images/Aries.jpg')}}">
+        {% elif sign == "Cancer" %}
+            <img src="{{url_for('static', filename='images/Cancer.jpg')}}">
+        {% elif sign == "Capricorn" %}
+            <img src="{{url_for('static', filename='images/Capricorn.jpg')}}">
+        {% elif sign == "Gemini" %}
+            <img src="{{url_for('static', filename='images/Gemini.jpg')}}">
+        {% elif sign == "Leo" %}
+            <img src="{{url_for('static', filename='images/Leo.jpg')}}">
+        {% elif sign == "Libra" %}
+            <img src="{{url_for('static', filename='images/Libra.jpg')}}">
+        {% elif sign == "Pisces" %}
+            <img src="{{url_for('static', filename='images/Pisces.jpg')}}">
+        {% elif sign == "Saggittarius" %}
+            <img src="{{url_for('static', filename='images/Saggittarius.jpg')}}">
+        {% elif sign == "Scorpio" %}
+            <img src="{{url_for('static', filename='images/Scorpio.jpg')}}">
+        {% elif sign == "Taurus" %}
+            <img src="{{url_for('static', filename='images/Taurus.jpg')}}">
+        {% else %}
+            <img src="{{url_for('static', filename='images/Virgo.jpg')}}">
+        {% endif%}
+
+        <h2> I was born {{blog_manager.blogs[blog_id].owner.birthday}}</h2>
     </div>
 </div>
+
+
+
+
 
 <div class="topics-container">
     <div class="topic">
@@ -49,52 +85,6 @@
         <h1> {{blog_manager.blogs[blog_id].topics[2]}} </h1>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="section1">
-                <h2> jiewofjeiwojfio </h2>
-
-            </div>
-            <div class="section2"></div>
-            <h1> Blog </h1> -->
-    <!-- </div> -->
-
-    <!-- <div class="fav-singer-content">
-        <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}" class="fav-singer-image"> -->
-
-
-
-<!-- <div class="singer-section">
-        <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}" class="fav-singer-image">
-    </div> -->
-
-<!-- <div class="main-content">
-        <div class="about-me">
-            <div id="about-me-title"><h2> All About Me </h2></div>
-            <div id="about-me-content"><h2> Content</h2></div>
-        </div>
-        <div class="singer-section">
-            <div id="fav-singer-title"><h2> My favourite singer/band is {{blog_manager.blogs[blog_id].owner.fav_singer}}</h2></div>
-            <div id="fav-singer-image">
-                <img src="{{blog_manager.blogs[blog_id].owner.image_fav_singer}}">
-            </div>
-        </div>
-    </div> -->
-
 
 
 {% endblock%}
