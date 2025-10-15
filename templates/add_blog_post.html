@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %} Add Blog Entry {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='add_blog_post.css')}}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="header">
+        <div id="navigation">
+            <div id="navigation-border">
+                <a href="{{ url_for('topic', topic_id=topic_id, blog_id=blog_id)}}"><h2> ← Back </h2></a>
+            </div>
+        </div>
+
+        <div id="title">
+            <h1 id="title-text" id="altered-title"> Add a Blog Entry </h1>
+        </div>
+
+        <div id="filler-content"></div>
+    </div>
+
+    <!-- insert the form -->
+    <div class="main-content">
+        <form action="{{ url_for('add_blog_post', blog_id=blog_id, topic_id=topic_id)}}" method="POST" class="form">
+            <div class="form-content">
+                {{form.hidden_tag()}}
+                {{form.title.label}} {{form.title(id='title-input')}} <br>
+                {{form.date.label}} {{form.date}} <br>
+                
+                {{form.bio.label}} 
+                {{form.bio (class='big-input-section')}} <br>
+                {{form.content.label}} 
+                {{form.content(class='big-input-section')}} <br> 
+                {{form.submit()}}
+            </div>
+        </form>
+    </div>
+
+
+</header>
+{% endblock %}

@@ -8,5 +8,5 @@ class Blog:
         self.description = description
         self.blog_name = blog_name  
         self.blog_cover = blog_cover
-        self.topics:Topic = topics   
+        self.topics:Topic = topics
         

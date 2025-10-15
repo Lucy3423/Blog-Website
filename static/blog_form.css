@@ -49,17 +49,6 @@
     font-size: 30px;
 }
 
-.form-input-short {
-    width: 250px;
-    border: 1px solid #ba3349;
-    display: flex;
-}
-
-.form-input-long {
-    width: 400px;
-    border: 1px solid #ba3349;
-    display: flex;
-}
 
 
 .form-input-description {
@@ -93,6 +82,13 @@
     background-color: white;
     color:#ba3349;
     border: 2px dashed #ba3349;
+}
+
+.description-input {
+    min-width: 500px;
+    max-width: 550px;
+    max-height: 250px;
+    padding: 5px;
 }
 
 

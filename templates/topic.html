@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %} Topic {% endblock %}
+
+{% block head %} 
+<link rel="stylesheet" href="{{url_for('static', filename='topic.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<!-- add a header picture depending on which topic page it is -->
+{% if topic_id == 0 %}
+    <div class="background-image">
+        <img src="{{ url_for('static', filename='images/topic1.jpg')}}">
+    </div>
+
+{% elif topic_id == 1 %}
+    <div class="background-image">
+        <img src="{{ url_for('static', filename='images/topic2.jpg')}}">
+    </div>
+{% elif topic_id == 2 %}
+    <div class="background-image">
+        <img src="{{ url_for('static', filename='images/topic3.jpg')}}">
+    </div>
+{% endif %}
+
+
+<!-- add the header content: title, navigation etc. -->
+<div class="header">
+    <div id="navigation">
+        <div id="navigation-border">
+            <a href="{{url_for('dashboard', blog_id=blog_id)}}">
+                <h2> ← Back </h2>
+            </a>
+        </div>
+    </div>
+    <div id="title">
+        <h1 id="title-text"> {{blog.topics[topic_id].topic_name}} </h1>
+    </div>
+    <div id="add-blog-entry-section">
+        <div id="add-blog-border">
+            <a href="{{url_for('add_blog_post', blog_id=blog_id, topic_id=topic_id)}}"><h2> Add New Entry + </h2></a>
+        </div>
+    </div>
+</div>
+
+
+<!-- main content of the page including featured posts -->
+<div class="main-content">
+    <div class="recent-posts-section">
+        <div class="recent-posts-title">
+            <h2> Recent Posts </h2>
+        </div>
+
+        <div class="recent-posts-content">
+            <ul>
+                {% for post in blog.topics[topic_id].posts[:3] %}
+                    <li>
+                        <h3> {{post.title | title}} | {{post.date}} </h3>
+                        <p class="bio">{{post.bio }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-image-section">
+        <h2 class="topic-image"> this is where a pic willl be </h2>
+    </div>
+</div>
+
+<div class="older-posts-section">
+    <h1 id="older-posts-title"> View Older Posts </h1>
+    <div class="older-posts-content">
+        <ul>
+            {% for topic in blog.topics[topic_id].posts[3:] %}
+                <li>
+                    <h3><span class="highlight-text"> {{topic.title | title}} | {{topic.date}} </span></h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock%}

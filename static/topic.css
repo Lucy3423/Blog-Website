@@ -1,0 +1,148 @@
+#add-blog-entry-section {
+    width: 33.333%;
+    margin: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-right: 50px;
+}
+
+#add-blog-border {
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #ba3349;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* width: 25%; */
+    /* font-size: 15px; */
+}
+
+#add-blog-border:hover {
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #ba3349;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    margin: 50px 100px;
+    
+}
+
+.recent-posts-section {
+    display: flex;
+    width: 55%;
+    border: 3px solid #ba3349;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: white;
+}
+
+
+.recent-posts-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(242, 136, 152);
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.recent-posts-content {
+    display: block;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.recent-posts-content li {
+    font-size: 20px;
+    width: 100%;
+}
+
+.bio {
+    white-space: pre-wrap;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    /* breaks up words to ensure it does not overflow */
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    padding-right: 50px;
+    
+    box-sizing: border-box;
+}
+
+
+/* .recent-posts-content p {
+    font-size: 20px;
+    padding-right: 10px;
+    box-sizing: border-box;
+} */
+
+
+
+.topic-image-section {
+    width: 40%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.older-posts-section {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 100px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#older-posts-title {
+    margin: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    background-color: rgb(242, 136, 152);
+    color: white;
+}
+
+.older-posts-content {
+    height: 200px;
+    overflow: scroll;
+    width: 40%;
+    border: 2px dashed #ba3349;
+    background-color: white;
+    color: #ba3349;
+    display: flex;
+    justify-content: center;
+}
+
+
+.older-posts-content ul{
+    margin: 0px;
+}
+
+.older-posts-content li {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.highlight-text:hover {
+    background-color: #ba3349;
+    color: white;
+    display: block;
+    padding: 0px;
+    display: inline-block;
+
+}
+

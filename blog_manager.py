@@ -1,6 +1,10 @@
 from blog import Blog
 from user import User
+from topic import Topic
+from post import Post
 from forms.build_blog_form import Build_blog_form
+from forms.add_post_form import Add_post_form
+
 
 from flask import flash
 
@@ -11,8 +15,12 @@ class Blog_manager:
     
     def create_new_blog(self, form:Build_blog_form):
         new_user = User(form.owner_name.data, form.birthday.data)
-        new_topics = [form.topic1.data, form.topic2.data, form.topic3.data]
-        self.blogs.append(Blog(self.current_id, new_user, form.description.data, form.blog_name.data, form.blog_cover.data, new_topics))
+        topic1 = Topic(0, form.topic1.data, [])
+        topic2 = Topic(1, form.topic2.data, [])
+        topic3 = Topic(2, form.topic3.data, [])
+        topics = [topic1, topic2, topic3]
+        blog_id = len(self.blogs) - 1
+        self.blogs.append(Blog(blog_id, new_user, form.description.data, form.blog_name.data, form.blog_cover.data, topics))
         
         current_id = self.current_id
         self.current_id += 1
@@ -98,6 +106,10 @@ class Blog_manager:
                 sign = "Capricorn"
         return sign
         
-
+    def add_blog_post(self, form:Add_post_form, blog:Blog, topic_id, blog_id):
+        new_post = Post(form.title.data, form.date.data, form.bio.data, form.content.data)
+        topic = blog.topics[topic_id]
+        topic.posts.append(new_post)
+        return self.blogs
 
 

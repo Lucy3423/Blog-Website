@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DateField
+from wtforms import StringField, SubmitField, DateField, TextAreaField
 from wtforms.validators import DataRequired 
 
 
 class Build_blog_form(FlaskForm): 
     owner_name = StringField('My name is... ', validators=[DataRequired()])
     blog_name = StringField('My blog is called... ', validators=[DataRequired()])
-    description = StringField('My bio is (approx 3 sentences)... ', validators=[DataRequired()])
+    description = TextAreaField('My bio is (approx 3 sentences)... ', validators=[DataRequired()])
     birthday = DateField('My birthday is (yyyy-mm-dd)... ', format='%Y-%m-%d', validators=[DataRequired()])
     blog_cover = StringField("My blog background image is (.jpg or .img)...")
     # fav_singer = StringField('My favourite singer/band is... ', validators=[DataRequired()])

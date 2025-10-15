@@ -70,21 +70,18 @@
     </div>
 </div>
 
-
-
-
-
+<!-- to fix the problem with the topic route, loop through each topic and print them that way, then add a parameter topic_id
+ to the Topic class which is then passed through as the topic_id when you call the link -->
 <div class="topics-container">
-    <div class="topic">
-        <h1> {{blog_manager.blogs[blog_id].topics[0]}} </h1>
-    </div>
-    <div class="topic">
-        <h1> {{blog_manager.blogs[blog_id].topics[1]}} </h1>
-    </div>
-    <div class="topic">
-        <h1> {{blog_manager.blogs[blog_id].topics[2]}} </h1>
-    </div>
+    {% for topic in blog_manager.blogs[blog_id].topics %}
+        <div class="topic">
+            <a href="{{ url_for('topic', blog_id=blog_id, topic_id=topic.topic_id)}}">
+                <h1> {{topic.topic_name}}</h1>
+            </a>
+        </div>
+    {% endfor %}
 </div>
+
 
 
 {% endblock%}
