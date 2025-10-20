@@ -51,7 +51,9 @@ def dashboard(blog_id):
 
 @app.route("/topic/<int:blog_id>/<int:topic_id>")
 def topic(blog_id, topic_id):
-    return render_template("topic.html", blog_id=blog_id, topic_id=topic_id, blog_manager=blog_manager, blog=blog_manager.blogs[blog_id])
+    blog=blog_manager.blogs[blog_id]
+    topic = blog.topics[topic_id]
+    return render_template("topic.html", blog_id=blog_id, topic_id=topic_id, blog_manager=blog_manager, blog=blog, topic=topic)
 
 
 
@@ -67,6 +69,15 @@ def add_blog_post(blog_id, topic_id):
         blog_manager.add_blog_post(form, blog, topic_id, blog_id)
         return redirect(url_for('topic', blog_id=blog_id, topic_id=topic_id))
     return render_template("add_blog_post.html", blog_id=blog_id, topic_id=topic_id, form=form)
+
+
+@app.route('/blog_post/<int:blog_id>/<int:topic_id>/<int:post_id>')
+def blog_post(blog_id, topic_id, post_id):
+    blog = blog_manager.blogs[blog_id]
+    posts = blog.topics[topic_id].posts
+    return render_template('blog_post.html', posts=posts, blog_id=blog_id, topic_id=topic_id, post_id=post_id)
+
+
 
 
 if __name__ == "__main__":

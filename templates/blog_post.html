@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog Post {% endblock %}
+
+{% block head %} 
+    <link rel="stylesheet" href="{{url_for('static', filename='blog_post.css')}}">
+{% endblock%}
+
+{% block content %}
+<body>
+    <div class="blog-header">
+        <div id="blog-navigation">
+            <div id="blog-navigation-border">
+                <a href="{{url_for('topic', blog_id=blog_id, topic_id=topic_id)}}">
+                    <h2> ← Back </h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="blog-title">
+            <h2 id="title-text"> {{posts[post_id].title | title}} </h2>
+        </div>
+
+        <div class="blog-filler-content">
+
+        </div>
+    </div>
+
+
+    <div class="post-bio-section">
+        <div class="post-bio-content">
+            <h2><b> Summary: </b> {{posts[post_id].bio}}</h2>
+        </div>
+    </div>
+
+    <div class="post-section">
+        <p class="post-content"> {{posts[post_id].content}}</p>
+    </div>
+
+
+
+</body>
+{% endblock %}

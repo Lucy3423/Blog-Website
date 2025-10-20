@@ -20,7 +20,7 @@
     </div>
 {% elif topic_id == 2 %}
     <div class="background-image">
-        <img src="{{ url_for('static', filename='images/topic3.jpg')}}">
+        <img src="{{url_for('static', filename='images/topic3.jpg')}}">
     </div>
 {% endif %}
 
@@ -45,6 +45,7 @@
 </div>
 
 
+
 <!-- main content of the page including featured posts -->
 <div class="main-content">
     <div class="recent-posts-section">
@@ -56,7 +57,8 @@
             <ul>
                 {% for post in blog.topics[topic_id].posts[:3] %}
                     <li>
-                        <h3> {{post.title | title}} | {{post.date}} </h3>
+                        <!-- add a link to the blog post page -->
+                        <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}"><h3> {{post.post_id}} {{post.title | title}} | {{post.date}} </h3></a>
                         <p class="bio">{{post.bio }}</p>
                     </li>
                 {% endfor %}
@@ -64,9 +66,10 @@
         </div>
     </div>
 
-    <div class="topic-image-section">
-        <h2 class="topic-image"> this is where a pic willl be </h2>
+    <div class="image-container">
+        <img src="{{ topic.topic_image }}">
     </div>
+
 </div>
 
 <div class="older-posts-section">
@@ -75,7 +78,8 @@
         <ul>
             {% for topic in blog.topics[topic_id].posts[3:] %}
                 <li>
-                    <h3><span class="highlight-text"> {{topic.title | title}} | {{topic.date}} </span></h3>
+                    <!-- add a link to each blog post -->
+                    <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}"><h3><span class="highlight-text"> {{topic.title | title}} | {{topic.date}} </span></h3></a>
                 </li>
             {% endfor %}
         </ul>

@@ -30,6 +30,7 @@
     flex-direction: row;
     gap: 120px;
     margin: 50px 100px;
+    align-items: center;
     
 }
 
@@ -40,6 +41,7 @@
     border-radius: 10px;
     flex-direction: column;
     background-color: white;
+    min-height: 300px;
 }
 
 
@@ -55,9 +57,9 @@
 }
 
 .recent-posts-content {
-    display: block;
+    display: flex;
     flex-direction: column;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 10px;
     width: 100%;
 }
@@ -65,7 +67,28 @@
 .recent-posts-content li {
     font-size: 20px;
     width: 100%;
+    color: #ba3349;
 }
+
+.recent-posts-content a {
+    color: #ba3349;
+    box-sizing: border-box;
+}
+
+/* NOTE: h3 tags should have the same display setting when (not) hovered. This ensures the height will not change */
+
+.recent-posts-content h3 {
+    display: inline-block;
+}
+
+.recent-posts-content h3:hover {
+    background-color: #ba3349;
+    color: white;
+    display: inline-block;
+}
+
+
+
 
 .bio {
     white-space: pre-wrap;
@@ -76,26 +99,29 @@
     max-width: 100%;
     font-size: 20px;
     padding-right: 50px;
-    
     box-sizing: border-box;
 }
 
 
-/* .recent-posts-content p {
-    font-size: 20px;
-    padding-right: 10px;
-    box-sizing: border-box;
-} */
-
-
-
-.topic-image-section {
+.image-container {
     width: 40%;
-    height: 350px;
     display: flex;
     justify-content: center;
-    border: 2px solid black;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #ba3349;
 }
+
+.image-container img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
 
 .older-posts-section {
     display: flex;
@@ -103,7 +129,6 @@
     margin: 50px 100px;
     justify-content: center;
     align-items: center;
-
 }
 
 #older-posts-title {

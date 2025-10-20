@@ -15,9 +15,9 @@ class Blog_manager:
     
     def create_new_blog(self, form:Build_blog_form):
         new_user = User(form.owner_name.data, form.birthday.data)
-        topic1 = Topic(0, form.topic1.data, [])
-        topic2 = Topic(1, form.topic2.data, [])
-        topic3 = Topic(2, form.topic3.data, [])
+        topic1 = Topic(0, form.topic1.data, form.topic1_image.data, [])
+        topic2 = Topic(1, form.topic2.data, form.topic2_image.data, [])
+        topic3 = Topic(2, form.topic3.data, form.topic3_image.data, [])
         topics = [topic1, topic2, topic3]
         blog_id = len(self.blogs) - 1
         self.blogs.append(Blog(blog_id, new_user, form.description.data, form.blog_name.data, form.blog_cover.data, topics))
@@ -107,7 +107,13 @@ class Blog_manager:
         return sign
         
     def add_blog_post(self, form:Add_post_form, blog:Blog, topic_id, blog_id):
-        new_post = Post(form.title.data, form.date.data, form.bio.data, form.content.data)
+        current_topic = blog.topics[topic_id]
+        if len(current_topic.posts) != 0:
+            post_id = len(current_topic.posts)
+        else: 
+            post_id = 0
+
+        new_post = Post(post_id, form.title.data, form.date.data, form.bio.data, form.content.data)
         topic = blog.topics[topic_id]
         topic.posts.append(new_post)
         return self.blogs

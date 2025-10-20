@@ -14,7 +14,12 @@ class Build_blog_form(FlaskForm):
     # fun_fact = StringField("A fun fact about me is...", validators=[DataRequired()])
     # enter topics that they want to feature in their blog
     topic1 = StringField("Topic 1 is about... ", validators=[DataRequired()])
+    topic1_image = StringField("Topic 1's image cover is...", validators=[DataRequired()])
+    
     topic2 = StringField("Topic 2 is about... ", validators=[DataRequired()])
+    topic2_image = StringField("Topic 2's image cover is...", validators=[DataRequired()])
+
     topic3 = StringField("Topic 3 is about... ", validators=[DataRequired()])
+    topic3_image = StringField("Topic 3's image cover is...", validators=[DataRequired()])
 
     submit = SubmitField("SUBMIT")
