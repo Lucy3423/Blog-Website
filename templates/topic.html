@@ -58,7 +58,7 @@
                 {% for post in blog.topics[topic_id].posts[:3] %}
                     <li>
                         <!-- add a link to the blog post page -->
-                        <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}"><h3> {{post.post_id}} {{post.title | title}} | {{post.date}} </h3></a>
+                        <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}"><h3> {{post.title | title}} | {{post.date}} </h3></a>
                         <p class="bio">{{post.bio }}</p>
                     </li>
                 {% endfor %}
@@ -72,18 +72,27 @@
 
 </div>
 
-<div class="older-posts-section">
-    <h1 id="older-posts-title"> View Older Posts </h1>
+
+<div class="older-posts-section"> 
+    <div class="older-posts-filler"></div>
+
     <div class="older-posts-content">
-        <ul>
-            {% for topic in blog.topics[topic_id].posts[3:] %}
-                <li>
-                    <!-- add a link to each blog post -->
-                    <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}"><h3><span class="highlight-text"> {{topic.title | title}} | {{topic.date}} </span></h3></a>
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="older-posts-title">
+            <h2> Older Posts </h2>
+        </div>
+        <div class="older-posts">
+            <ul>
+                {% for post in blog.topics[topic_id].posts[3:] %}
+                    <li>
+                        <a href="{{url_for('blog_post', blog_id=blog_id, topic_id=topic_id, post_id=post.post_id)}}" class="link-to-older-post"><h2> {{post.title | title}} | {{post.date}} </h2></a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
+
+    <div class="older-posts-filler"></div>
 </div>
+
 
 {% endblock%}

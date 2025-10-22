@@ -17,6 +17,10 @@
     flex-direction: column;
     background-color: white;
     margin: 25px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    box-sizing: border-box;  
 }
 
 #about-me-title {

@@ -7,4 +7,5 @@ class Add_post_form(FlaskForm):
     date = DateField("Date Published: ", validators=[DataRequired()])
     bio = TextAreaField("Give a summary for the post: ", validators=[DataRequired()])
     content = TextAreaField("Add the content for your blog here: ", validators=[DataRequired()])
+    image = StringField("Add a picture (optional) :  .jpg")
     submit = SubmitField("Add Post")

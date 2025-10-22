@@ -113,7 +113,7 @@ class Blog_manager:
         else: 
             post_id = 0
 
-        new_post = Post(post_id, form.title.data, form.date.data, form.bio.data, form.content.data)
+        new_post = Post(post_id, form.title.data, form.date.data, form.bio.data, form.content.data, form.image.data)
         topic = blog.topics[topic_id]
         topic.posts.append(new_post)
         return self.blogs

@@ -24,12 +24,17 @@
 
 
         <div class="main-content">
-            <div class="description">
+            <div class="description-preview-section">
                 <h2> Fill out this form to start creating the content for you blog!
                     Each blog features three different topics which interest you - this can be food, programming, gaming, sport and much more. 
                     Simply list the topics you want to talk about below in order to create a section for them. 
                 </h2>
+                <h2 id="preview-title"> Preview of Blog Home Page</h2>
+                <img src="{{url_for('static', filename='images/home-preview.jpg')}}" alt="Preview of blog home page">
             </div>
+
+
+            
             <div class="form">
                 <form action="/blog_form" method="POST" class="form-content">
                     {{form.hidden_tag()}}
@@ -95,6 +100,7 @@
    
             </div>
         </div>
+        
 
 
 
