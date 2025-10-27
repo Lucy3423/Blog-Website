@@ -35,7 +35,7 @@
         </div>
     </div>
     <div id="title">
-        <h1 id="title-text"> {{blog.topics[topic_id].topic_name}} </h1>
+        <h1 id="title-text"> {{blog.topics[topic_id].topic_name | title}} </h1>
     </div>
     <div id="add-blog-entry-section">
         <div id="add-blog-border">
@@ -54,6 +54,7 @@
         </div>
 
         <div class="recent-posts-content">
+            {% if blog.topics[topic_id].posts[:3] %}
             <ul>
                 {% for post in blog.topics[topic_id].posts[:3] %}
                     <li>
@@ -63,6 +64,12 @@
                     </li>
                 {% endfor %}
             </ul>
+
+            {% else %}
+            <h2> </h2>
+            <h2> </h2>
+            <h2 class="feed-message"> Feed me with posts! </h2>
+            {% endif %}
         </div>
     </div>
 
@@ -81,6 +88,7 @@
             <h2> Older Posts </h2>
         </div>
         <div class="older-posts">
+            {% if blog.topics[topic_id].posts[:3] %}
             <ul>
                 {% for post in blog.topics[topic_id].posts[3:] %}
                     <li>
@@ -88,6 +96,9 @@
                     </li>
                 {% endfor %}
             </ul>
+            {% else %}
+                <h2 class="feed-message"> Feed me with posts! </h2>
+            {% endif %}
         </div>
     </div>
 

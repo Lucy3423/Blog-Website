@@ -33,11 +33,13 @@
         </div>
     </div>
 
-    <div class="image-section">
-        {% if posts[post_id].image %}
+    {% if posts[post_id].image %}
+        <div class="image-section">
+
             <img src="{{posts[post_id].image}}" class="post-image">
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
+
 
     <div class="post-section">
         <p class="post-content"> {{posts[post_id].content}}</p>
