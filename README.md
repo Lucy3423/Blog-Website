@@ -1,3 +1,4 @@
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 ‘Blog Builder’ is a website which helps you to build your own blog! Each blog features three topics, which each have an individual home page. The user is able to view posts belonging to a specific topic, in addition to adding new ones too!
 
 
@@ -19,6 +20,7 @@ I started by brainstorming features I wanted to implement into the website, late
 Highlights and challenges
 
 My favourite part of the project was designing the home screen because I enjoyed making it customizable and add different hover effects. At the same time though, this was a pretty hard part of the project because my original design, featuring a fav singer section, did not work out. Therefore, I had to return to the drawing board to think about a different feature which could replace the singer section. I decided to add an astrological star sign section which would display the user’s sign and their birthday. 
+
 I really enjoyed creating the design for the website and having a consistent colour palette throughout. Before beginning the design, I went on Word to pick out different colours I liked the look of – this was a lot of fun!
 My problem solving skills really improved throughout this project, because admittedly, I made a lot of mistakes. Whenever I created a new page or tried something new, the program would crash, and it kept saying ‘index out of range’. Eventually though, I learned how to fix these errors and overcome them.
 
