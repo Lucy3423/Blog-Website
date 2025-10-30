@@ -28,7 +28,7 @@ class Blog_manager:
 
     def check_image_format(self, form:Build_blog_form):
         # check that the value of fav_singer_image at self.blogs[blog_index] is correct
-        if (form.blog_cover.data[-4:] == ".img" or form.blog_cover.data[-4:] == ".jpg"):
+        if (form.blog_cover.data[-4:] == ".png" or form.blog_cover.data[-4:] == ".jpg"):
             valid = True
         else:
             valid = False
